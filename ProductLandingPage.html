@@ -1,0 +1,585 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>SoulSpring Day Spa</title>
+  </head>
+  <style>
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////// */
+
+    body {
+      font-family: 'Rubik', sans-serif ;
+      background-color: white;
+      margin: 0;
+      align-items: center;
+      padding: 0;
+      overflow-x:hidden;
+    }
+
+    header {
+      width: 100%;
+      height: 100px;
+      margin: 0;
+      padding: 0 50px;
+      display: flex;
+      overflow: hidden;
+      position: fixed;
+      z-index: 99;
+    }
+    
+    #header-img {
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      border: 7px solid rgb(201, 118, 201);
+      width: 90px;
+      height: 90px;
+      display: none;
+    }
+
+    .header-company-name {
+      display: inline-flex;
+      position: relative;
+      font-size: 2.2vw;
+      z-index: 1;
+      color: rgb(201, 118, 201);
+      align-self: center;
+      justify-self: center;
+    }
+
+    .nav-link-div {
+      width: 25%;
+      position:absolute;
+      display: grid;
+      right: 200px;
+      top: 20px;
+      grid-template-areas: "call about blog";
+      justify-content: space-between;
+    }
+
+    .offers {
+      right: 10px;
+      justify-self: end;
+      grid-area: blog;
+    }
+
+    .about {
+      right: 20px;
+      justify-self: center;
+      grid-area: about;
+    }
+
+    .contact-us {
+      right: 40px;
+      justify-self: start;
+      grid-area: call;
+    }
+
+    main {
+      top: 100px;
+      position: relative;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+
+
+    img {
+      z-index: 1;
+      top: 0;
+      display: inline-block;
+      position: absolute;
+      object-fit: cover;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    #top-container {
+      z-index: 2;
+      position: relative;
+      min-height: 500px;
+      width: 100%;
+      display: grid;      
+      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+      grid-template-rows: 1fr;
+      grid-gap: 100px;
+      padding: 0;
+      margin: auto;
+      
+    }
+
+    .top-left-container {
+      font-weight: 900;
+      width: 100%;
+      margin: auto;
+      padding: 50px;
+      border: 0;
+      color: black;
+      align-self: center;
+      justify-self: center;
+      position: relative;
+    }
+
+    .top-right-container {
+      border: 0;
+      padding: 0;
+      width: 60vw;
+      height: 200px;
+      position: relative;
+      top: 100px;
+      right: 0;
+    }
+
+    .larger-h2 {
+      top: 40px;
+      position: relative;
+      font-size: 7.2vh;
+    }
+
+    .larger-p {
+      position: relative;
+      top: 20px;
+      font-size: 4vh;
+    }
+
+    .normal-p {
+      position: relative;
+      top: 20px;
+      font-size: 3vh;
+    }
+
+    form {
+      position: relative;
+      margin: 70px 67% 0 33%;
+    }
+
+    input {
+      display: block;
+      width: 300px;
+      height: 35px;
+      border:1px solid rgb(201, 118, 201);
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    #submit {
+      position: absolute;
+      top: 60px;
+      display: block;
+      width: 300px;
+      height: 35px;
+      border:1px solid rgb(201, 118, 201);
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+    }
+
+    .video-div {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 150px;
+    }
+
+    .video-div > iframe {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .product-offers {
+      z-index: 2;
+      width: 100%;
+      position: relative;
+      min-height: 400px;
+      background: inherit;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      margin: auto;
+    }
+
+    .product {
+      width: 400px;
+      height: 350px;
+      text-align: left;
+      margin: 0;
+      padding: 10px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0px 2px 6px 1px rgb(156, 156, 156);
+      border-top: 10px solid rgb(201, 118, 201);
+      justify-self: center;
+    }
+
+    .product-name {
+      color: rgb(201, 118, 201);
+    }
+
+    .product-price {
+      color: grey
+    }
+
+    .product-description {
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 20px 70px;
+      margin: 0;
+      position: relative;
+      min-height: 150px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-rows: 1fr;
+      grid-gap: 20px;
+    }
+
+    .shadowed-tab {
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 2px 6px 1px rgb(156, 156, 156);
+    }
+
+    .company-footer, .socials-footer, .developer-footer {
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color:purple;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+    }
+
+    #nav-burger {
+      display: none;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+      #nav-bar {
+        display: none;
+      }
+
+      #nav-burger {
+        display: inline-block;
+      }
+
+      #header-img {
+        display: none;
+      }
+
+      .header-company-name {
+        left: 30px;
+        align-self: left;
+      }
+
+      .top-left-container {
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 20px;
+      }
+
+      .top-right-container {
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+
+      .normal-p {
+        display: none;
+      }
+    }
+
+    /* /////////////////////////////////////////////////////////////////////////////////////// */
+
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+  </style>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <body>
+    <header id="header" class="shadowed-tab">
+      <img id="header-img" src="https://multichoicetalentfactory.com/sites/default/files/styles/profile_image_crop/public/pictures/2019-07/Screenshot_20190514-232208%5B1%5D_0.png?h=39d117e7&itok=5WXtp4iC"><img/>
+      <h2 class="header-company-name">SoulSpring Day Spa</h2>
+      <nav id="nav-bar" class="nav-link-div">
+        <a class="nav-link contact-us" href="#footer"><h3>Contact Us</h3></a>
+        <a class="nav-link about" href="#top-container"> <h3>About Us</h3> </a>
+        <a class="nav-link offers" href="#product-offers"> <h3>Offers</h3> </a>
+      </nav>
+      
+      <nav id="nav-burger" class="nav-link-div">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#footer"><h3>Contact Us</h3></a>
+            <a href="#top-container"> <h3>About Us</h3> </a>
+            <a href="#product-offers"> <h3>Offers</h3> </a>
+          </div>
+        </div>
+
+        <span style="font-size:30px;cursor:pointer;right:20px" onclick="openNav()">&#9776;</span>
+      </nav>
+    </header>
+
+    <main>
+      <div id="top-container">
+        <div class="top-left-container">
+          <h2 class="larger-h2">
+            RELAX
+          </h2>
+          <p class="larger-p">Slow down. Sit back. Clear your thoughts with SoulSpring</p>
+          <p class="normal-p">You deserve a break. Discover again what it means to be at ease. Feel better and enjoy the long lasting benefits of the experience.</p>
+        </div>
+        <div class="top-right-container">
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input id="email" name="email" type="email" placeholder="Email Address" required>
+            <input id="submit" type="submit" value="Get Started!"/>
+          </form>
+        </div>
+      </div>
+      <div id="mid-container">
+        <div class="offers">
+
+        </div>
+      </div>
+
+      <div id="product-offers" class="product-offers">
+        <div class="product one">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product two">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product three">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product four">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product five">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product six">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product seven">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product eight">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+
+        <div class="product nine">
+          <h3 class="product-name" >MOJITO MASSAGE</h3>
+          <p class="product-price" >R250 per Session</p>
+          <p class="product-description">
+            A classic Swedish massage using our exclusive Mojito, 
+            massage oil, a rich blend of organic oils including: 
+            high oleic safflower oil, sunflower, apricot, sesame, 
+            and jojoba oils, with pure organic lime, spearmint, 
+            and helichysum essential oils.This European body 
+            massage technique uses soothing, relaxing strokes 
+            to increase circulation and ease muscle tension, to
+             help you achieve total relaxation.
+          </p>
+        </div>
+      </div>
+
+      <div class="video-div">
+        <iframe id="video" width="967" height="544" src="https://www.youtube.com/embed/lwuiOeZehcY" title="Get this relaxing massage." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <img src="https://cdn.pixabay.com/photo/2018/01/15/22/22/essential-oils-3084952_960_720.jpg" alt="div background image">
+    </main>
+
+    <footer id="footer" class="shadowed-tab">
+      <div class="company-footer">
+        <h2 class="footer-company-name">SoulSpring Day Spa</h2>
+        <span class="copyright" > © 2021 All Rights Reserved.</span>
+        <br>
+        <span>Privacy Policy.</span>
+        <br>
+        <span>Terms & Conditions</span>
+      </div>
+
+      <div class="socials-footer">
+        <h2 class="span-head">Follow Us On</h2>
+        <span><a href="facebook.com">FaceBook</a></span>
+        <br>
+        <span><a href="twitter.com">Twitter</a></span>
+        <br>
+        <span><a href="instagram.com">Instagram</a></span>
+      </div>
+
+      <div class="developer-footer" >
+        <span><a href="https://www.linktr.ee/gesydarati">Built By <em>Gesy Darati</em></a></span>
+      </div>
+      
+    </footer>
+  </body>
+</html>
